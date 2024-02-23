@@ -64,6 +64,17 @@ VALUES
     ORDER BY COUNT(*) ASC
     FETCH FIRST ROW ONLY)
 );
+UPDATE empl
+SET empl_salari=1500
+WHERE empl_nom = 'Oriol';
+
+UPDATE empl
+SET empl_salari=empl_salari*1.1
+WHERE empl_dept_num=20;
+
+INSERT INTO empl(empl_num,empl_nom,empl_ofici,empl_salari)
+SELECT plantilla_empleat_num, plantilla_nom, plantilla_funcio,plantilla_salari FROM plantilla
+WHERE plantilla_empleat_num NOT BETWEEN 7000 AND 7999;
 
 
 SELECT * FROM empl
